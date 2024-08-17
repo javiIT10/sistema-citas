@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      href="assets/img/logos/logo.ico"
+      type="image/x-icon"
+    />
+
+    <!--==================== CSS ====================-->
+
+    <!-- Remixicons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <!-- Styles css -->
+    <link rel="stylesheet" href="assets/css/build-styles.css" />
+
+    <!--==================== JavaScript ====================-->
+
+    <!-- Title -->
+    <title>OrthoCenter | Inicio</title>
+  </head>
+  <body class="font-poppins">
+    <!--==================== HEADER ====================-->
+    <header
+      class="w-full bg-body-color fixed top-0 left-0 z-[100] transition-all duration-[400ms]"
+      id="header"
+    >
+      <nav
+        class="h-14 flex justify-between items-center tablet:h-20 tablet:gap-x-12 max-w-7xl mx-4 sm-mobil:mx-6 desktop:px-6 desktop:mx-auto"
+      >
+        <a
+          href="/"
+          class="text-title-color uppercase font-bold tracking-[-1px] inline-flex items-center gap-x-2 hover:text-first-color transition-all duration-[400ms]"
+        >
+          <i class="ri-tooth-line text-lg text-first-color"></i>OrthoCenter
+        </a>
+
+        <div class="nav-menu -right-full" id="nav-menu">
+          <ul class="flex flex-col gap-y-6 tablet:flex-row tablet:gap-x-12">
+            <li>
+              <a href="#home" class="nav-link">Inicio</a>
+            </li>
+            <li>
+              <a href="#about" class="nav-link">Nosotros</a>
+            </li>
+            <li>
+              <a href="#services" class="nav-link">Servicios</a>
+            </li>
+            <li>
+              <a href="#contact" class="nav-link">Contacto</a>
+            </li>
+          </ul>
+
+          <div
+            class="text-title-color text-2xl absolute top-4 right-5 cursor-pointer hover:text-first-color tablet:hidden transition-all duration-[400ms]"
+            id="nav-close"
+          >
+            <i class="ri-close-line"></i>
+          </div>
+        </div>
+
+        <div class="inline-flex items-center gap-x-4">
+          <i
+            class="ri-login-box-line text-title-color text-xl cursor-pointer hover:text-first-color transition-all duration-[400ms] btn-login"
+          ></i>
+          <!--           <i
+            class="ri-user-line text-title-color text-xl cursor-pointer hover:text-first-color transition-all duration-[400ms] hidden"
+          ></i> -->
+
+          <div
+            class="text-title-color text-xl cursor-pointer hover:text-first-color transition-all duration-[400ms] tablet:hidden"
+            id="nav-toggle"
+          >
+            <i class="ri-menu-line"></i>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!--==================== CALENDAR ====================-->
+      <section
+        class="p-[2rem_0_2rem] tablet:p-[5rem_0_5rem] desktop:p-[5rem_0_5rem] max-w-7xl mx-4 sm-mobil:mx-6 desktop:px-6 desktop:mx-auto"
+      >
+        <div
+          class="grid gap-6 tablet:grid-cols-2 desktop:grid-cols-3 desktop:gap-10"
+        >
+          <header
+            class="flex flex-col gap-4 tablet:flex-row-reverse tablet:items-start desktop:items-center tablet:justify-between tablet:col-start-1 tablet:col-end-2 desktop:col-end-3 citas-calendar"
+          >
+            <a
+              href="services.html"
+              class="button text-sm tablet:text-base text-first-color hover:text-first-color-alt font-medium inline-flex items-center gap-x-2 p-0"
+            >
+              Mis citas
+              <i
+                class="ri-calendar-event-line transition-transform duration-[400ms] button__icon"
+              ></i>
+            </a>
+            <div
+              class="desktop:flex desktop:flex-row-reverse desktop:items-center desktop:justify-between desktop:gap-44"
+            >
+              <h2
+                class="text-2xl leading-[140%] desktop:text-3xl mb-3 desktop:mb-0"
+              >
+                ¡Está disponible!
+              </h2>
+              <ul class="pl-2 flex flex-col gap-2">
+                <li class="flex items-center gap-1">
+                  <span
+                    class="inline-block w-5 h-5 rounded bg-white border border-gray-600/65"
+                  ></span
+                  >Disponible
+                </li>
+                <li class="flex items-center gap-1">
+                  <span
+                    class="inline-block w-5 h-5 rounded bg-title-color border border-gray-600/65"
+                  ></span
+                  >No disponible
+                </li>
+                <li class="flex items-center gap-1">
+                  <span
+                    class="inline-block w-5 h-5 rounded bg-first-color border border-gray-600/65"
+                  ></span
+                  >Tu selección
+                </li>
+              </ul>
+            </div>
+          </header>
+
+          <div
+            id="calendar"
+            class="tablet:col-start-1 tablet:col-end-2 desktop:col-end-3 w-full citas-calendar"
+          ></div>
+
+          <form
+            action="perfil.html"
+            class="flex flex-col gap-6 tablet:col-start-2 tablet:col-end-3 tablet:row-start-1 tablet:row-end-3 desktop:col-start-3 desktop:col-end-4 citas-info"
+          >
+            <div>
+              <label class="text-xl font-semibold text-title-color"
+                >Código de la cita</label
+              >
+              <input
+                type="text"
+                value="K2DRESF34"
+                disabled
+                class="text-sm tablet:text-base border-none font-semibold text-first-color-alt p-0 w-full"
+              />
+            </div>
+            <div>
+              <label>Tipo de servicio</label>
+              <input
+                type="text"
+                value="Limpiezas Dentales"
+                disabled
+                class="text-sm tablet:text-base rounded-md border-gray-300 bg-gray-400/25 w-full"
+              />
+            </div>
+            <div>
+              <label>Fecha de la cita</label>
+              <input
+                type="text"
+                value="2024-08-22"
+                disabled
+                class="text-sm tablet:text-base rounded-md border-gray-300 bg-gray-400/25 w-full"
+              />
+            </div>
+            <div>
+              <label>Fecha de la cita</label>
+              <input
+                type="text"
+                value="2024-08-22"
+                disabled
+                class="text-sm tablet:text-base rounded-md border-gray-300 bg-gray-400/25 w-full"
+              />
+            </div>
+
+            <div class="flex flex-row-reverse justify-between items-end gap-4">
+              <div class="text-end">
+                <label
+                  class="text-lg tablet:text-xl font-semibold text-title-color"
+                  >Total a pagar</label
+                >
+                <input
+                  type="text"
+                  value="$ 400.00 mx"
+                  disabled
+                  class="text-lg tablet:text-xl border-none font-semibold text-first-color-alt p-0 w-32 text-end"
+                />
+              </div>
+              <button
+                type="submit"
+                class="button bg-first-color hover:bg-first-color-alt items-center gap-x-2 w-full justify-center text-sm mobile:text-lg px-3"
+              >
+                Pagar cita
+                <i
+                  class="ri-bank-card-line transition-transform duration-[400ms] button__icon"
+                ></i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!--==================== CONTACT ====================-->
+      <section
+        class="p-[3.5rem_0_2rem] tablet:p-[10rem_0_5rem] desktop:p-[13rem_0_5rem] max-w-7xl mx-4 sm-mobil:mx-6 desktop:px-6 desktop:mx-auto"
+        id="contact"
+      >
+        <div class="grid gap-y-14 tablet:grid-cols-2">
+          <div class="contact-info">
+            <h2 class="text-2xl mb-8 desktop:text-3xl">
+              Comuníquese con nosotros <br />
+              hoy a través de cualquiera <br />
+              de los medios
+            </h2>
+
+            <div class="grid gap-y-8">
+              <div>
+                <h3 class="text-base font-medium text-text-color mb-2">
+                  Llámenos
+                </h3>
+                <span
+                  class="inline-flex items-center gap-x-2 text-title-color font-medium"
+                >
+                  <i class="ri-phone-line text-xl"></i>
+                  +999 888 777
+                </span>
+              </div>
+
+              <div class="contact__information">
+                <h3 class="text-base font-medium text-text-color mb-2">
+                  Escríbenos por correo
+                </h3>
+                <span
+                  class="inline-flex items-center gap-x-2 text-title-color font-medium"
+                >
+                  <i class="ri-mail-line text-xl"></i>
+                  user@email.com
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <form action="" class="contact-form">
+            <div class="grid gap-y-8 mb-10">
+              <div class="relative h-12 border-b border-text-color-light">
+                <input
+                  type="email"
+                  placeholder=" "
+                  class="contact__input focus:ring-0"
+                />
+                <label for="" class="contact__label">Email</label>
+              </div>
+
+              <div class="relative h-12 border-b border-text-color-light">
+                <input
+                  type="text"
+                  placeholder=" "
+                  class="contact__input focus:ring-0"
+                />
+                <label for="" class="contact__label">Motivo</label>
+              </div>
+
+              <div class="relative border-b border-text-color-light h-28">
+                <textarea
+                  name="message"
+                  placeholder=" "
+                  class="contact__input resize-none focus:ring-0"
+                ></textarea>
+                <label for="" class="contact__label">Mensaje</label>
+              </div>
+            </div>
+
+            <button
+              class="button bg-first-color hover:bg-first-color-alt items-center gap-x-2"
+            >
+              Enviar mensaje
+              <i
+                class="ri-mail-send-line transition-transform duration-[400ms] button__icon"
+              ></i>
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!--==================== MODAL LOGIN ====================-->
+    <div class="modal__container" id="modalLogin">
+      <div class="modal__content">
+        <div
+          class="inline-flex text-title-color rounded text-3xl absolute top-5 right-5 cursor-pointer transition-colors duration-[400ms] hover:text-first-color"
+          id="closeLogin"
+        >
+          <i class="ri-close-line"></i>
+        </div>
+
+        <form action="" class="form-login" id="formLogin">
+          <div class="form__field">
+            <label for="email" class="form__label">Correo electrónico</label>
+            <input
+              type="email"
+              placeholder="Ingresa tu email"
+              required
+              id="email"
+              class="form__input"
+            />
+
+            <i
+              class="ri-mail-line h-max text-2xl absolute left-6 top-0 bottom-0 m-auto"
+            ></i>
+
+            <div class="form__error">
+              <i class="ri-information-fill text-base"></i>
+              <span class="text-sm font-medium">El email no es válido.</span>
+            </div>
+          </div>
+          <div class="form__field">
+            <label for="email" class="form__label">Contraseña</label>
+            <input
+              type="password"
+              placeholder="Ingresa tu contraseña"
+              required
+              id="email"
+              class="form__input"
+            />
+
+            <i
+              class="ri-lock-line h-max text-2xl absolute left-6 top-0 bottom-0 m-auto"
+            ></i>
+
+            <div class="form__error">
+              <i class="ri-information-fill text-base"></i>
+              <span class="text-sm font-medium"
+                >La contraseña no es válida.</span
+              >
+            </div>
+          </div>
+
+          <div>
+            <button
+              class="button bg-first-color hover:bg-first-color-alt items-center gap-x-2 w-full mt-4 justify-center shadow-input-valid text-sm"
+            >
+              Iniciar sesión
+              <i
+                class="ri-login-box-line transition-transform duration-[400ms] button__icon"
+              ></i>
+            </button>
+            <div class="mt-3 text-center">
+              <p class="text-sm font-medium text-text-color">
+                ¿No tienes una cuenta? |
+                <a
+                  href="#"
+                  class="transition-all duration-[400ms] text-first-color hover:text-first-color-alt btn-register"
+                  >Registrate</a
+                >
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <p class="py-2 relative text-center">
+              <span
+                class="w-full h-[1px] absolute left-0 top-[20px] bottom-0 bg-gray-300"
+              ></span>
+              <span
+                class="font-medium text-base text-text-color bg-white relative z-10 px-1"
+                >O</span
+              >
+            </p>
+
+            <div>
+              <a
+                href="#"
+                class="button bg-white border border-gray-300 text-text-color items-center gap-x-3 w-full mt-4 justify-center hover:shadow-input-valid text-sm"
+              >
+                Iniciar sesión con Google
+                <img
+                  src="assets/img/logos/google.png"
+                  alt="google-logo"
+                  class="w-[20px] h-[20px] transition-transform duration-[400ms] button__icon"
+                />
+              </a>
+              <a
+                href="#"
+                class="button bg-white border border-gray-300 text-text-color items-center gap-x-3 w-full mt-4 justify-center hover:shadow-input-valid text-sm"
+              >
+                Iniciar sesión con Facebook
+                <img
+                  src="assets/img/logos/facebook.png"
+                  alt="facebook-logo"
+                  class="w-[20px] h-[20px] transition-transform duration-[400ms] button__icon"
+                />
+              </a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!--==================== MODAL REGISTER ====================-->
+    <div class="modal__container" id="modalRegister">
+      <div class="modal__content">
+        <div
+          class="inline-flex text-title-color rounded text-3xl absolute top-5 right-5 cursor-pointer transition-colors duration-[400ms] hover:text-first-color"
+          id="closeRegsiter"
+        >
+          <i class="ri-close-line"></i>
+        </div>
+
+        <form action="" class="form-login" id="formLogin">
+          <div class="form__field">
+            <label for="text" class="form__label">Nombre(s)</label>
+            <input
+              type="text"
+              placeholder="Ingresa tu nombre"
+              required
+              id="text"
+              class="form__input"
+            />
+
+            <i
+              class="ri-user-line h-max text-2xl absolute left-6 top-0 bottom-0 m-auto"
+            ></i>
+
+            <div class="form__error">
+              <i class="ri-information-fill text-base"></i>
+              <span class="text-sm font-medium">El nombre no es válido.</span>
+            </div>
+          </div>
+
+          <div class="form__field">
+            <label for="text" class="form__label">Apellido(s)</label>
+            <input
+              type="text"
+              placeholder="Ingresa tus apellidos"
+              required
+              id="text"
+              class="form__input"
+            />
+
+            <i
+              class="ri-user-line h-max text-2xl absolute left-6 top-0 bottom-0 m-auto"
+            ></i>
+
+            <div class="form__error">
+              <i class="ri-information-fill text-base"></i>
+              <span class="text-sm font-medium"
+                >El/los apellidos no son válidos.</span
+              >
+            </div>
+          </div>
+
+          <div class="form__field">
+            <label for="email" class="form__label">Correo electrónico</label>
+            <input
+              type="email"
+              placeholder="Ingresa tu email"
+              required
+              id="email"
+              class="form__input"
+            />
+
+            <i
+              class="ri-mail-line h-max text-2xl absolute left-6 top-0 bottom-0 m-auto"
+            ></i>
+
+            <div class="form__error">
+              <i class="ri-information-fill text-base"></i>
+              <span class="text-sm font-medium">El email no es válido.</span>
+            </div>
+          </div>
+          <div class="form__field">
+            <label for="email" class="form__label">Contraseña</label>
+            <input
+              type="password"
+              placeholder="Ingresa tu contraseña"
+              required
+              id="email"
+              class="form__input"
+            />
+
+            <i
+              class="ri-lock-line h-max text-2xl absolute left-6 top-0 bottom-0 m-auto"
+            ></i>
+
+            <div class="form__error">
+              <i class="ri-information-fill text-base"></i>
+              <span class="text-sm font-medium"
+                >La contraseña no es válida.</span
+              >
+            </div>
+          </div>
+
+          <div>
+            <button
+              class="button bg-first-color hover:bg-first-color-alt items-center gap-x-2 w-full mt-4 justify-center shadow-input-valid text-sm"
+            >
+              Iniciar sesión
+              <i
+                class="ri-login-box-line transition-transform duration-[400ms] button__icon"
+              ></i>
+            </button>
+
+            <div class="mt-3 text-center">
+              <p class="text-sm font-medium text-text-color">
+                ¿Ya tienes una cuenta? |
+                <a
+                  href="#"
+                  class="transition-all duration-[400ms] text-first-color hover:text-first-color-alt btn-login"
+                  >Inicia sesión</a
+                >
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <p class="py-2 relative text-center">
+              <span
+                class="w-full h-[1px] absolute left-0 top-[20px] bottom-0 bg-gray-300"
+              ></span>
+              <span
+                class="font-medium text-base text-text-color bg-white relative z-10 px-1"
+                >O</span
+              >
+            </p>
+
+            <div>
+              <a
+                href="#"
+                class="button bg-white border border-gray-300 text-text-color items-center gap-x-3 w-full mt-4 justify-center hover:shadow-input-valid text-sm"
+              >
+                Iniciar sesión con Google
+                <img
+                  src="assets/img/logos/google.png"
+                  alt="google-logo"
+                  class="w-[20px] h-[20px] transition-transform duration-[400ms] button__icon"
+                />
+              </a>
+              <a
+                href="#"
+                class="button bg-white border border-gray-300 text-text-color items-center gap-x-3 w-full mt-4 justify-center hover:shadow-input-valid text-sm"
+              >
+                Iniciar sesión con Facebook
+                <img
+                  src="assets/img/logos/facebook.png"
+                  alt="facebook-logo"
+                  class="w-[20px] h-[20px] transition-transform duration-[400ms] button__icon"
+                />
+              </a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!--==================== FOOTER ====================-->
+    <footer
+      class="p-[3.5rem_0_2rem] tablet:p-[10rem_0_5rem] desktop:p-[13rem_0_5rem] footer"
+    >
+      <div
+        class="grid gap-y-12 tablet:grid-cols-2 tablet:gap-x-12 max-w-7xl mx-4 sm-mobil:mx-6 desktop:px-6 desktop:mx-auto"
+      >
+        <div>
+          <a
+            href="services.html"
+            class="inline-flex items-center gap-x-2 text-title-color uppercase font-bold leading-[-1px] mb-10 transition-all duration-[400ms] desktop:text-xl"
+          >
+            <i class="ri-sparkling-2-line text-lg text-first-color"></i>
+            OrthoCenter
+          </a>
+
+          <h3 class="text-xl mb-6">
+            Suscribete para recibir <br />
+            todas las novedades
+          </h3>
+
+          <div class="bg-first-color-light p-3 flex justify-between rounded-lg">
+            <input
+              type="email"
+              placeholder="Ingresa tu email"
+              class="w-[70%] p-[0_.5rem] bg-inherit text-text-color placeholder:text-text-color border-none outline-none focus:ring-0"
+            />
+
+            <button
+              class="inline-flex items-center gap-x-2 bg-first-color hover:bg-first-color-alt hover:translate-x-1 text-white p-4 rounded-lg font-medium transition-all duration-[400ms] footer__button"
+            >
+              Suscribirse
+              <i class="ri-arrow-right-up-line"></i>
+            </button>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-xl mb-3">Aceptamos estos medios de pago</h3>
+
+          <div class="inline-flex items-center gap-x-10">
+            <img
+              src="assets/img/metodos-pago/metodo-01.png"
+              alt=""
+              class="w-[90px]"
+            />
+            <img
+              src="assets/img/metodos-pago/metodo-02.png"
+              alt=""
+              class="w-[90px]"
+            />
+            <img
+              src="assets/img/metodos-pago/metodo-03.png"
+              alt=""
+              class="w-[90px]"
+            />
+          </div>
+        </div>
+      </div>
+
+      <p class="text-center text-sm text-text-color-light m-[3rem_0_1rem]">
+        &#169; 2022 Ortho Center Dental Clinic. All rigths reserved
+      </p>
+    </footer>
+
+    <!--=============== SCROLL REVEAL ===============-->
+    <script src="assets/js/plugins/scrollreveal.min.js"></script>
+
+    <!--==================== JAVASCRIPT ====================-->
+
+    <script src="assets/js/menu.js"></script>
+    <script src="assets/js/citas.js"></script>
+    <script src="assets/js/plantilla.js"></script>
+  </body>
+</html>

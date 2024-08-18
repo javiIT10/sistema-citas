@@ -56,17 +56,27 @@ $servidor = ControladorRuta::ctrServidor();
 
       $rutacategorias = ControladorCategorias::ctrMostrarCategorias();
 
+      $validarRuta = "";
+
       foreach ($rutacategorias as $clave => $valor) {
 
         if ($_GET["pagina"] == $valor["ruta"]) {
 
-          include "paginas/servicios.php";
+          $validarRuta = "servicios";
         }
       }
 
       if ($_GET["pagina"] == "citas" || $_GET["pagina"] == "perfil") {
 
         include "paginas/" . $_GET["pagina"] . ".php";
+      } else if ($validarRuta != "") {
+
+        include "paginas/servicios.php";
+      } else {
+
+        echo '<script>
+        window.location = "' . $ruta . '"
+        </script>';
       }
     } else {
 

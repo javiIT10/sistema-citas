@@ -15,5 +15,8 @@ require_once "modelos/valores.modelo.php";
 require_once "controladores/categorias.controlador.php";
 require_once "modelos/categorias.modelo.php";
 
+require_once "controladores/servicios.controlador.php";
+require_once "modelos/servicios.modelo.php";
+
 $plantilla = new ControladorPlantilla();
 $plantilla->ctrPlantilla();

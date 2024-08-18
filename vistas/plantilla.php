@@ -54,20 +54,19 @@ $servidor = ControladorRuta::ctrServidor();
     <?php
     if (isset($_GET["pagina"])) {
 
+      $rutacategorias = ControladorCategorias::ctrMostrarCategorias();
 
-      if ($_GET["pagina"] == "servicios") {
+      foreach ($rutacategorias as $clave => $valor) {
 
-        include "paginas/servicios.php";
+        if ($_GET["pagina"] == $valor["ruta"]) {
+
+          include "paginas/servicios.php";
+        }
       }
 
-      if ($_GET["pagina"] == "citas") {
+      if ($_GET["pagina"] == "citas" || $_GET["pagina"] == "perfil") {
 
-        include "paginas/citas.php";
-      }
-
-      if ($_GET["pagina"] == "perfil") {
-
-        include "paginas/perfil.php";
+        include "paginas/" . $_GET["pagina"] . ".php";
       }
     } else {
 

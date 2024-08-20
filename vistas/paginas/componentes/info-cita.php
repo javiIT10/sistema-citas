@@ -42,44 +42,55 @@
               <form
                   action="perfil.html"
                   class="flex flex-col gap-6 tablet:col-start-2 tablet:col-end-3 tablet:row-start-1 tablet:row-end-3 desktop:col-start-3 desktop:col-end-4 citas-info">
-                  <div>
-                      <label for="codigoCita" class="text-xl font-semibold text-title-color">Código de la cita</label>
+                  <header class="my-5">
+                      <h3 class="text-xl mb-2">Información de tu cita</h3>
+                      <p
+                          class="flex gap-2 mobile:gap-4 items-center text-sm mobile:text-base">
+                          <i class="ri-feedback-line text-first-color text-2xl"></i>
+                          Por favor verifique que su Información es correcta.
+                      </p>
+                  </header>
+                  <div class="form__field">
+                      <label for="codigoCita" class="form__label">Código de la cita</label>
                       <input
+                          type="text"
+                          required
+                          disabled
                           id="codigoCita"
                           name="codigoCita"
-                          type="text"
-                          value="K2DRESF34"
-                          disabled
-                          class="text-sm tablet:text-base border-none font-semibold text-first-color-alt p-0 w-full" />
+                          class="form__input text-first-color"
+                          value="K2DRESF34" />
+
+                      <i class="ri-barcode-line h-max text-2xl absolute left-6 top-0 bottom-0 m-auto"></i>
                   </div>
-                  <div>
-                      <label for="servicioTipo">Tipo de servicio</label>
+
+                  <div class="form__field">
+                      <label for="servicioTipo" class="form__label">Tipo de servicio</label>
                       <input
+                          type="text"
+                          required
+                          disabled
                           id="servicioTipo"
                           name="servicioTipo"
-                          type="text"
-                          value="Limpiezas Dentales"
-                          disabled
-                          class="text-sm tablet:text-base rounded-md border-gray-300 bg-gray-400/25 w-full" />
+                          class="form__input text-first-color"
+                          value="Endodoncia" />
+
+                      <i class="ri-tooth-line h-max text-2xl absolute left-6 top-0 bottom-0 m-auto"></i>
                   </div>
-                  <div>
-                      <label for="fechaCitaInicio">Fecha de la cita</label>
-                      <input
-                          name="fechaCitaInicio"
-                          id="fechaCitaInicio"
-                          type="text"
-                          value="2024-08-22"
-                          disabled
-                          class="text-sm tablet:text-base rounded-md border-gray-300 bg-gray-400/25 w-full" />
-                  </div>
-                  <!--                   <div>
-                      <label>Fecha de la cita</label>
+
+                  <div class="form__field">
+                      <label for="fechaCitaSeleccionada" class="form__label">Fecha de tu cita</label>
                       <input
                           type="text"
-                          value="2024-08-22"
+                          required
                           disabled
-                          class="text-sm tablet:text-base rounded-md border-gray-300 bg-gray-400/25 w-full" />
-                  </div> -->
+                          id="fechaCitaSeleccionada"
+                          name="fechaCitaSeleccionada"
+                          class="form__input text-first-color"
+                          value="2024-08-25 16:00:00" />
+
+                      <i class="ri-calendar-schedule-line h-max text-2xl absolute left-6 top-0 bottom-0 m-auto"></i>
+                  </div>
 
                   <div class="flex flex-row-reverse justify-between items-end gap-4">
                       <div class="text-end">

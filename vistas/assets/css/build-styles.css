@@ -1174,6 +1174,52 @@ scroll-header{
   opacity: 1;
 }
 
+/* <!--==================== FULLCALENDAR ====================--> */
+
+.fc .fc-timegrid-col.fc-day-today {
+  background-color: rgb(255 255 255 / 15%);
+}
+
+.fc .fc-scrollgrid-liquid {
+  max-height: 600px;
+}
+
+.fc-event-main-frame {
+  display: flex;
+  align-items: center;
+  padding-left: 5px;
+}
+
+@media (max-width: 895px) {
+  .fc .fc-toolbar-title {
+    font-size: 20px;
+    margin: 0px;
+  }
+
+  .fc .fc-col-header-cell-cushion {
+    font-size: 12px;
+  }
+
+  .fc .fc-timegrid-axis-cushion,
+    .fc .fc-timegrid-slot-label-cushion {
+    font-size: 12px;
+  }
+
+  .fc-event-main-frame {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    font-size: 11px;
+  }
+
+  .fc-toolbar-chunk {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+  }
+}
+
 .visible{
   visibility: visible;
 }
@@ -1222,12 +1268,20 @@ scroll-header{
   right: 0px;
 }
 
+.right-2{
+  right: 0.5rem;
+}
+
 .right-5{
   right: 1.25rem;
 }
 
 .top-0{
   top: 0px;
+}
+
+.top-2{
+  top: 0.5rem;
 }
 
 .top-4{
@@ -1240,14 +1294,6 @@ scroll-header{
 
 .top-\[20px\]{
   top: 20px;
-}
-
-.right-2{
-  right: 0.5rem;
-}
-
-.top-2{
-  top: 0.5rem;
 }
 
 .z-10{
@@ -1269,6 +1315,11 @@ scroll-header{
 .mx-4{
   margin-left: 1rem;
   margin-right: 1rem;
+}
+
+.my-5{
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
 }
 
 .mb-1{
@@ -1749,6 +1800,10 @@ scroll-header{
   padding-left: 1rem;
 }
 
+.pt-3{
+  padding-top: 0.75rem;
+}
+
 .pt-4{
   padding-top: 1rem;
 }
@@ -2023,17 +2078,6 @@ scroll-header{
   border-style: none;
 }
 
-.focus\:shadow-none:focus{
-  --tw-shadow: 0 0 #0000;
-  --tw-shadow-colored: 0 0 #0000;
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
-.focus\:outline-none:focus{
-  outline: 2px solid transparent;
-  outline-offset: 2px;
-}
-
 .focus\:ring-0:focus{
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
   --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(0px + var(--tw-ring-offset-width)) var(--tw-ring-color);
@@ -2053,12 +2097,13 @@ scroll-header{
 }
 
 @media (min-width: 576px){
-  .mobile\:right-5{
-    right: 1.25rem;
+  .mobile\:gap-4{
+    gap: 1rem;
   }
 
-  .mobile\:top-5{
-    top: 1.25rem;
+  .mobile\:text-base{
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
 
   .mobile\:text-lg{

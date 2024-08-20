@@ -2,11 +2,11 @@
     <div class="modal__container" id="modalServices">
         <div class="modal__content">
             <div
-                class="inline-flex text-title-color rounded text-3xl absolute top-2 right-2 mobile:top-5 mobile:right-5 cursor-pointer transition-colors duration-300 hover:text-first-color"
+                class="inline-flex text-title-color rounded text-3xl absolute top-2 right-2 cursor-pointer transition-colors duration-300 hover:text-first-color"
                 id="closeServices">
                 <i class="ri-close-line"></i>
             </div>
-            <form action="citas.html" method="post" class="flex flex-col gap-5">
+            <form action="citas.html" method="post" class="flex flex-col gap-5 pt-3">
 
                 <div class="form__field">
                     <label for="fechaCita" class="form__label">Fecha de la cita</label>

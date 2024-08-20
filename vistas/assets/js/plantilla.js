@@ -18,7 +18,9 @@ const cardsServices = document.querySelectorAll(".card-services");
 const modalServices = document.querySelector("#modalServices");
 const closeServices = document.querySelector("#closeServices");
 
-const inputServicio = document.querySelector('[name="servicio"]');
+const inputServicio = document.querySelector('[name="id-servicio"]');
+
+moment.locale("es");
 
 /* ======================================================================
                             EVENT LISTENERS
@@ -79,7 +81,10 @@ if (cardsServices) {
 
       // Seleccionar tarejta
       card.classList.add("card-active");
-      card.querySelector("a").textContent = "Seleccionado";
+
+      card.querySelector(
+        "a"
+      ).innerHTML = `Seleccionado <i class="ri-tooth-line transition-transform duration-300 button__icon"></i>`;
 
       // Guardar el id del servicio seleccionado
       inputServicio.value = e.target.getAttribute("service-id");
@@ -96,6 +101,17 @@ if (closeServices) {
     ocultarModal(modalServices);
   });
 }
+
+/* <!--==================== DATETIMEPICKER ====================--> */
+$.datetimepicker.setLocale("es");
+
+$("#fechaCita").datetimepicker({
+  format: "Y-m-d H:00:00",
+  minDate: 0,
+  defaultTime: moment().add(1, "hours").format("HH:00"),
+  allowTimes: ["08:00", "10:00", "12:00", "14:00", "16:00", "18:00", "20:00"],
+  disabledWeekDays: [0, 6],
+});
 
 /* ======================================================================
                             FUNCIONES
@@ -116,7 +132,9 @@ function ocultarModal(reference) {
 function eliminarActive() {
   cardsServices.forEach((card) => {
     card.classList.remove("card-active");
-    card.querySelector("a").textContent = "Seleccionar servicio";
+    card.querySelector(
+      "a"
+    ).innerHTML = `Seleccionar servicio <i class="ri-tooth-line transition-transform duration-300 button__icon"></i>`;
   });
 }
 

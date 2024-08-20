@@ -3,6 +3,7 @@
         ?>
       <!--==================== VALUES ====================-->
       <section
+          id="values"
           class="p-[3.5rem_0_2rem] tablet:p-[10rem_0_5rem] desktop:p-[13rem_0_5rem] max-w-7xl mx-4 sm-mobil:mx-6 desktop:px-6 desktop:mx-auto">
           <div
               class="bg-first-color p-[3rem_2rem_2rem] rounded lg:p-[3.5rem_2.5rem]">

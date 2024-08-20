@@ -41,8 +41,7 @@
                           href="#"
                           class="button text-sm tablet:text-base text-first-color hover:text-first-color-alt font-medium inline-flex items-center gap-x-2 p-0">
                           Seleccionar servicio
-                          <i
-                              class="ri-tooth-line transition-transform duration-300 button__icon"></i>
+                          <i class="ri-tooth-line transition-transform duration-300 button__icon"></i>
                       </a>
                   </article>
               <?php endforeach ?>

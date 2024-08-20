@@ -29,6 +29,9 @@ $servidor = ControladorRuta::ctrServidor();
     href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
     rel="stylesheet" />
 
+  <!-- DateTimePicker -->
+  <link rel="stylesheet" href="assets/css/plugins/jquery.datetimepicker.min.css" />
+
   <!-- Estilos personalizados css -->
   <link rel="stylesheet" href="assets/css/build-styles.css" />
 
@@ -107,6 +110,15 @@ $servidor = ControladorRuta::ctrServidor();
 
   <!-- Scrollreveal -->
   <script src="assets/js/plugins/scrollreveal.min.js"></script>
+
+  <!-- JQuery -->
+  <script src="assets/js/plugins/jquery-3.7.1.min.js"></script>
+
+  <!-- Momentjs -->
+  <script src="assets/js/plugins/moment.js"></script>
+
+  <!-- DateTimePicker -->
+  <script src="assets/js/plugins/jquery.datetimepicker.full.min.js"></script>
 
   <!-- Js personalizado -->
   <script src="assets/js/menu.js"></script>

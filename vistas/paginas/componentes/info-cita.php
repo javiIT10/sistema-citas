@@ -43,43 +43,51 @@
                   action="perfil.html"
                   class="flex flex-col gap-6 tablet:col-start-2 tablet:col-end-3 tablet:row-start-1 tablet:row-end-3 desktop:col-start-3 desktop:col-end-4 citas-info">
                   <div>
-                      <label class="text-xl font-semibold text-title-color">Código de la cita</label>
+                      <label for="codigoCita" class="text-xl font-semibold text-title-color">Código de la cita</label>
                       <input
+                          id="codigoCita"
+                          name="codigoCita"
                           type="text"
                           value="K2DRESF34"
                           disabled
                           class="text-sm tablet:text-base border-none font-semibold text-first-color-alt p-0 w-full" />
                   </div>
                   <div>
-                      <label>Tipo de servicio</label>
+                      <label for="servicioTipo">Tipo de servicio</label>
                       <input
+                          id="servicioTipo"
+                          name="servicioTipo"
                           type="text"
                           value="Limpiezas Dentales"
                           disabled
                           class="text-sm tablet:text-base rounded-md border-gray-300 bg-gray-400/25 w-full" />
                   </div>
                   <div>
+                      <label for="fechaCitaInicio">Fecha de la cita</label>
+                      <input
+                          name="fechaCitaInicio"
+                          id="fechaCitaInicio"
+                          type="text"
+                          value="2024-08-22"
+                          disabled
+                          class="text-sm tablet:text-base rounded-md border-gray-300 bg-gray-400/25 w-full" />
+                  </div>
+                  <!--                   <div>
                       <label>Fecha de la cita</label>
                       <input
                           type="text"
                           value="2024-08-22"
                           disabled
                           class="text-sm tablet:text-base rounded-md border-gray-300 bg-gray-400/25 w-full" />
-                  </div>
-                  <div>
-                      <label>Fecha de la cita</label>
-                      <input
-                          type="text"
-                          value="2024-08-22"
-                          disabled
-                          class="text-sm tablet:text-base rounded-md border-gray-300 bg-gray-400/25 w-full" />
-                  </div>
+                  </div> -->
 
                   <div class="flex flex-row-reverse justify-between items-end gap-4">
                       <div class="text-end">
-                          <label
+                          <label for="precioCita"
                               class="text-lg tablet:text-xl font-semibold text-title-color">Total a pagar</label>
                           <input
+                              name="precioCita"
+                              id="precioCita"
                               type="text"
                               value="$ 400.00 mx"
                               disabled

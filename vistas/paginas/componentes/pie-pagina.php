@@ -18,6 +18,8 @@
 
               <div class="bg-first-color-light p-3 flex justify-between rounded-lg">
                   <input
+                      name="emailFooter"
+                      id="emailFooter"
                       type="email"
                       placeholder="Ingresa tu email"
                       class="w-[70%] p-[0_.5rem] bg-inherit text-text-color placeholder:text-text-color placeholder:text-sm tablet:placeholder:text-base border-none outline-none focus:ring-0" />

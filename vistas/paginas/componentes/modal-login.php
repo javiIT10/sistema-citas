@@ -9,12 +9,13 @@
 
           <form action="" class="form-login" id="formLogin">
               <div class="form__field">
-                  <label for="email" class="form__label">Correo electrónico</label>
+                  <label for="emailLogin" class="form__label">Correo electrónico</label>
                   <input
                       type="email"
                       placeholder="Ingresa tu email"
                       required
-                      id="email"
+                      id="emailLogin"
+                      name="emailLogin"
                       class="form__input" />
 
                   <i
@@ -26,12 +27,13 @@
                   </div>
               </div>
               <div class="form__field">
-                  <label for="email" class="form__label">Contraseña</label>
+                  <label for="passwordLogin" class="form__label">Contraseña</label>
                   <input
                       type="password"
                       placeholder="Ingresa tu contraseña"
                       required
-                      id="email"
+                      id="passwordLogin"
+                      name="passwordLogin"
                       class="form__input" />
 
                   <i

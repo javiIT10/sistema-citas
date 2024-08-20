@@ -39,26 +39,32 @@
                 <div class="grid gap-y-8 mb-10">
                     <div class="relative h-12 border-b border-text-color-light">
                         <input
+                            name="emailContact"
+                            id="emailContact"
                             type="email"
-                            placeholder=" "
+                            placeholder=""
                             class="contact__input focus:ring-0" />
-                        <label for="" class="contact__label">Email</label>
+                        <label for="emailContact" class="contact__label">Email</label>
                     </div>
 
                     <div class="relative h-12 border-b border-text-color-light">
                         <input
+                            name="reasonContact"
+                            id="reasonContact"
                             type="text"
                             placeholder=" "
                             class="contact__input focus:ring-0" />
-                        <label for="" class="contact__label">Motivo</label>
+                        <label for="reasonContact" class="contact__label">Motivo</label>
                     </div>
 
                     <div class="relative border-b border-text-color-light h-28">
                         <textarea
+                            name="messageContact"
+                            id="messageContact"
                             name="message"
                             placeholder=" "
                             class="contact__input resize-none focus:ring-0"></textarea>
-                        <label for="" class="contact__label">Mensaje</label>
+                        <label for="messageContact" class="contact__label">Mensaje</label>
                     </div>
                 </div>
 

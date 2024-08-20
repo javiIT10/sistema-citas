@@ -7,14 +7,15 @@
               <i class="ri-close-line"></i>
           </div>
 
-          <form action="" class="form-login" id="formLogin">
+          <form action="" class="form-login" id="formRegister">
               <div class="form__field">
-                  <label for="text" class="form__label">Nombre(s)</label>
+                  <label for="nameRegister" class="form__label">Nombre(s)</label>
                   <input
                       type="text"
                       placeholder="Ingresa tu nombre"
                       required
-                      id="text"
+                      id="nameRegister"
+                      name="nameRegister"
                       class="form__input" />
 
                   <i
@@ -27,12 +28,13 @@
               </div>
 
               <div class="form__field">
-                  <label for="text" class="form__label">Apellido(s)</label>
+                  <label for="lastNameRegister" class="form__label">Apellido(s)</label>
                   <input
                       type="text"
                       placeholder="Ingresa tus apellidos"
                       required
-                      id="text"
+                      id="lastNameRegister"
+                      name="lastNameRegister"
                       class="form__input" />
 
                   <i
@@ -45,12 +47,13 @@
               </div>
 
               <div class="form__field">
-                  <label for="email" class="form__label">Correo electrónico</label>
+                  <label for="emailRegister" class="form__label">Correo electrónico</label>
                   <input
                       type="email"
                       placeholder="Ingresa tu email"
                       required
-                      id="email"
+                      id="emailRegister"
+                      name="emailRegister"
                       class="form__input" />
 
                   <i
@@ -62,12 +65,13 @@
                   </div>
               </div>
               <div class="form__field">
-                  <label for="email" class="form__label">Contraseña</label>
+                  <label for="passwordRegister" class="form__label">Contraseña</label>
                   <input
                       type="password"
                       placeholder="Ingresa tu contraseña"
                       required
-                      id="email"
+                      id="passwordRegister"
+                      name="passwordRegister"
                       class="form__input" />
 
                   <i

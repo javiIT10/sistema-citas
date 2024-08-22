@@ -4,7 +4,7 @@
     <nav
         class="h-14 flex justify-between items-center tablet:h-20 tablet:gap-x-12 max-w-7xl mx-4 sm-mobil:mx-6 desktop:px-6 desktop:mx-auto">
         <a
-            href="/"
+            href="<?php echo $ruta ?>"
             class="text-title-color uppercase font-bold tracking-[-1px] inline-flex items-center gap-x-2 hover:text-first-color transition-all duration-[400ms]">
             <i class="ri-tooth-line text-lg text-first-color"></i>DentalClinic
         </a>
@@ -21,7 +21,7 @@
                     <a href="#values" class="nav-link">Valores</a>
                 </li>
                 <li>
-                    <a href="#services" class="nav-link">Servicios</a>
+                    <a href="#especialidades" class="nav-link">Especialidades</a>
                 </li>
                 <li>
                     <a href="#contact" class="nav-link">Contacto</a>

@@ -2,6 +2,10 @@
                             VARIABLES
 ====================================================================== */
 
+/* <!--==================== URLs para AJAX ====================--> */
+const urlPrincipal = document.querySelector("#urlPrincipal").value;
+const urlServidor = document.querySelector("#urlServidor").value;
+
 /* <!--==================== MODALES LOGIN & REGISTER ====================--> */
 const btnsLogin = document.querySelectorAll(".btn-login");
 const btnRegister = document.querySelector(".btn-register");
@@ -18,9 +22,7 @@ const cardsServices = document.querySelectorAll(".card-services");
 const modalServices = document.querySelector("#modalServices");
 const closeServices = document.querySelector("#closeServices");
 
-const inputServicio = document.querySelector('[name="id-servicio"]');
-
-moment.locale("es");
+const inputServicio = document.querySelector('[name="idEspecialista"]');
 
 /* ======================================================================
                             EVENT LISTENERS
@@ -102,17 +104,6 @@ if (closeServices) {
   });
 }
 
-/* <!--==================== DATETIMEPICKER ====================--> */
-$.datetimepicker.setLocale("es");
-
-$("#fechaCita").datetimepicker({
-  format: "Y-m-d H:00:00",
-  minDate: 0,
-  defaultTime: moment().add(1, "hours").format("HH:00"),
-  allowTimes: ["08:00", "10:00", "12:00", "14:00", "16:00", "18:00", "20:00"],
-  disabledWeekDays: [0, 6],
-});
-
 /* ======================================================================
                             FUNCIONES
 ====================================================================== */
@@ -134,7 +125,7 @@ function eliminarActive() {
     card.classList.remove("card-active");
     card.querySelector(
       "a"
-    ).innerHTML = `Seleccionar servicio <i class="ri-tooth-line transition-transform duration-300 button__icon"></i>`;
+    ).innerHTML = `Seleccionar especialista <i class="ri-tooth-line transition-transform duration-300 button__icon"></i>`;
   });
 }
 

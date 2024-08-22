@@ -21,7 +21,7 @@
                       <?php echo $inicio["descripcion"] ?>
                   </p>
                   <a
-                      href="#services"
+                      href="#especialidades"
                       class="button bg-first-color hover:bg-first-color-alt items-center gap-x-2 nav-link hover:text-white">
                       Explorar servicios
                       <i

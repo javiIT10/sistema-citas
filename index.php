@@ -12,11 +12,14 @@ require_once "modelos/nosotros.modelo.php";
 require_once "controladores/valores.controlador.php";
 require_once "modelos/valores.modelo.php";
 
-require_once "controladores/categorias.controlador.php";
-require_once "modelos/categorias.modelo.php";
+require_once "controladores/especialidades.controlador.php";
+require_once "modelos/especialidades.modelo.php";
 
-require_once "controladores/servicios.controlador.php";
-require_once "modelos/servicios.modelo.php";
+require_once "controladores/especialistas.controlador.php";
+require_once "modelos/especialistas.modelo.php";
+
+require_once "controladores/citas.controlador.php";
+require_once "modelos/citas.modelo.php";
 
 $plantilla = new ControladorPlantilla();
 $plantilla->ctrPlantilla();

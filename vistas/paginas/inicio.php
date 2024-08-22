@@ -6,6 +6,6 @@ include "componentes/nosotros.php";
 
 include "componentes/valores.php";
 
-include "componentes/categorias.php";
+include "componentes/especialidades.php";
 
 include "componentes/contacto.php";

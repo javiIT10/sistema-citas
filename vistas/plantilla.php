@@ -57,15 +57,15 @@ $servidor = ControladorRuta::ctrServidor();
     <?php
     if (isset($_GET["pagina"])) {
 
-      $rutacategorias = ControladorCategorias::ctrMostrarCategorias();
+      $rutaEspecialidades = ControladorEspecialidades::ctrMostrarEspecialidades();
 
       $validarRuta = "";
 
-      foreach ($rutacategorias as $clave => $valor) {
+      foreach ($rutaEspecialidades as $clave => $valor) {
 
-        if ($_GET["pagina"] == $valor["ruta"]) {
+        if ($_GET["pagina"] == $valor["especialidad_ruta"]) {
 
-          $validarRuta = "servicios";
+          $validarRuta = "especialistas";
         }
       }
 
@@ -74,7 +74,7 @@ $servidor = ControladorRuta::ctrServidor();
         include "paginas/" . $_GET["pagina"] . ".php";
       } else if ($validarRuta != "") {
 
-        include "paginas/servicios.php";
+        include "paginas/especialistas.php";
       } else {
 
         echo '<script>
@@ -95,7 +95,7 @@ $servidor = ControladorRuta::ctrServidor();
 
   include "paginas/componentes/modal-login.php";
   include "paginas/componentes/modal-registro.php";
-  include "paginas/componentes/modal-servicios.php"
+  include "paginas/componentes/modal-especialistas.php"
 
   ?>
 
@@ -104,6 +104,9 @@ $servidor = ControladorRuta::ctrServidor();
   <?php
   include "paginas/componentes/pie-pagina.php"
   ?>
+
+  <input type="hidden" value="<?php echo $ruta; ?>" id="urlPrincipal">
+  <input type="hidden" value="<?php echo $servidor; ?>" id="urlServidor">
 
 
   <!--==================== JAVASCRIPT ====================-->
@@ -122,8 +125,8 @@ $servidor = ControladorRuta::ctrServidor();
 
   <!-- Js personalizado -->
   <script src="assets/js/menu.js"></script>
-  <script src="assets/js/citas.js"></script>
   <script src="assets/js/plantilla.js"></script>
+  <script src="assets/js/citas.js"></script>
 </body>
 
 </html>

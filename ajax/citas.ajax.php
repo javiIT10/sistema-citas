@@ -18,6 +18,26 @@ class AjaxCitas
 
         echo json_encode($respuesta);
     }
+
+
+    public $codigoCita;
+
+    public function ajaxTraerCodigoCita()
+    {
+
+        $valor = $this->codigoCita;
+
+        $respuesta = ControladorCitas::ctrMostrarCodigoCita($valor);
+
+        echo json_encode($respuesta);
+    }
+}
+
+if (isset($_POST["codigoCita"])) {
+
+    $codigoCita = new AjaxCitas();
+    $codigoCita->codigoCita = $_POST["codigoCita"];
+    $codigoCita->ajaxTraerCodigoCita();
 }
 
 if (isset($_POST["idEspecialista"])) {

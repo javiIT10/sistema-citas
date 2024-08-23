@@ -5,9 +5,9 @@
         $especialistas = ControladorEspecialistas::ctrMostrarEspecialistas($valor);
 
         ?>
-      <!--==================== ESOECIALISTAS ====================-->
+      <!--==================== ESPECIALISTAS ====================-->
       <section
-          class="p-[2rem_0_2rem] tablet:p-[5rem_0_5rem] desktop:p-[5rem_0_5rem] max-w-7xl mx-4 sm-mobil:mx-6 desktop:px-6 desktop:mx-auto">
+          class="p-[2rem_0_2rem] tablet:p-[5rem_0_5rem] desktop:p-[5rem_0_5rem] max-w-7xl mx-4 sm-mobil:mx-6 desktop:px-6 desktop:mx-auto especialista-container">
           <h2 class="text-2xl desktop:text-3xl mb-8 leading-[140%] text-center">
               Agenda una cita ahora mismo
           </h2>
@@ -22,7 +22,7 @@
           <div class="grid gap-6 mt-12 desktop:grid-cols-3">
               <?php foreach ($especialistas as $clave => $valor):  ?>
                   <article
-                      class="card-services border border-text-color-light/25 p-3 shadow flex flex-col justify-between duration-[400ms] transition-all service-card">
+                      class="card-services border border-text-color-light/25 p-3 shadow flex flex-col justify-between duration-[400ms] transition-all especialista-card">
                       <header
                           class="overflow-hidden h-[245px] bg-cover bg-no-repeat bg-center mb-6"
                           style="background-image: url('<?php echo $servidor . $valor["especialista_img"] ?>');">
@@ -34,8 +34,10 @@
                           </p>
                       </div>
                       <a
-                          service-id="<?php echo $valor["especialista_id"] ?>"
-                          href="#"
+                          especialista-id="<?php echo $valor["especialista_id"] ?>"
+                          especialista-nombre="<?php echo $valor["especialista_nombre"] ?>"
+                          especialista-img="<?php echo $servidor . $valor["especialista_img"] ?>"
+                          href=" #"
                           class="button text-sm tablet:text-base text-first-color hover:text-first-color-alt font-medium inline-flex items-center gap-x-2 p-0">
                           Seleccionar especialista
                           <i class="ri-tooth-line transition-transform duration-300 button__icon"></i>

@@ -1812,6 +1812,11 @@ scroll-header{
   padding-bottom: 0.5rem;
 }
 
+.px-4{
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 .pl-2{
   padding-left: 0.5rem;
 }
@@ -1826,6 +1831,10 @@ scroll-header{
 
 .pt-4{
   padding-top: 1rem;
+}
+
+.pb-3{
+  padding-bottom: 0.75rem;
 }
 
 .text-center{
@@ -2166,8 +2175,24 @@ scroll-header{
     grid-row-start: 1;
   }
 
+  .tablet\:row-start-2{
+    grid-row-start: 2;
+  }
+
+  .tablet\:row-start-3{
+    grid-row-start: 3;
+  }
+
   .tablet\:row-end-3{
     grid-row-end: 3;
+  }
+
+  .tablet\:row-end-4{
+    grid-row-end: 4;
+  }
+
+  .tablet\:row-end-5{
+    grid-row-end: 5;
   }
 
   .tablet\:hidden{

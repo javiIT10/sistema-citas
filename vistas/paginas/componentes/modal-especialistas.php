@@ -27,6 +27,8 @@
                 </div>
 
                 <input type="hidden" name="idEspecialista" />
+                <input type="hidden" name="imgEspecialista" />
+                <input type="hidden" name="nombreEspecialista" />
 
                 <button
                     type="submit"

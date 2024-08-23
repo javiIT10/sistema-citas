@@ -47,10 +47,31 @@ function mostrarDatosCita() {
   mostrarSeccion("#datosCita");
 
   // Generamos el codigo de la cita
-  const codigo = codigoAleatorio(caracteres, 10);
+  const codigoCita = codigoAleatorio(caracteres, 10);
+  console.log(codigoCita);
 
   // Solicitamos la informacion a servidor
-  console.log(codigo);
+  const datos = new FormData();
+  datos.append("codigoCita", codigoCita);
+
+  $.ajax({
+    url: urlPrincipal + "ajax/citas.ajax.php",
+    method: "POST",
+    data: datos,
+    cache: false,
+    contentType: false,
+    processData: false,
+    dataType: "json",
+    success: function (respuesta) {
+      if (!respuesta) {
+        const inputCodigoCita = document.querySelector('[name="codigoCita"]');
+        inputCodigoCita.value = codigoCita;
+      } else {
+        const inputCodigoCita = document.querySelector('[name="codigoCita"]');
+        inputCodigoCita.value = codigoCita + codigoAleatorio(caracteres, 3);
+      }
+    },
+  });
 }
 
 function mostrarSeccion(referencia) {
@@ -76,7 +97,7 @@ if (infoCitas) {
 
   const totalEventos = [];
   const opcion1 = [];
-  const disponibilidad = false;
+  let validarDisponibilidad = false;
 
   const datos = new FormData();
   datos.append("idEspecialista", idEspecialista);
@@ -136,8 +157,6 @@ if (infoCitas) {
 
         // Mostrar datos de la cita
         mostrarDatosCita();
-        // Ocultar formulario de no disponible
-        ocultarSeccion("#formNoDisponible");
       } else {
         /* <!--==================== VALIDAR CRUCE DE FECHAS ====================--> */
         for (let i = 0; i < respuesta.length; i++) {
@@ -175,11 +194,14 @@ if (infoCitas) {
             );
             infoDisponibilidad.textContent = "¡No disponible!";
 
-            // Mostrar formulario de no disponible
-            mostrarSeccion("#formNoDisponible");
-
-            // Ocultar datos de la cita
+            // Ocultar seccion de datos
             ocultarSeccion("#datosCita");
+
+            // Mostrar formulario para cambio de fecha
+            const formNoDisponible =
+              document.querySelector("#formNoDisponible");
+            formNoDisponible.classList.remove("hidden");
+            formNoDisponible.classList.add("flex");
             break;
           } else {
             // Mostramos los datos traidos de la base de datos
@@ -198,8 +220,6 @@ if (infoCitas) {
 
           // Mostrar datos de la cita
           mostrarDatosCita();
-          // Ocultar formulario de no disponible
-          mostrarSeccion("#formNoDisponible");
         }
 
         if (validarDisponibilidad) {

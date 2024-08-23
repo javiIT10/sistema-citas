@@ -16,4 +16,14 @@ class ControladorCitas
 
         return $respuesta;
     }
+
+    static public function ctrMostrarCodigoCita($valor)
+    {
+
+        $tabla = "citas";
+
+        $respuesta = ModeloCitas::mdlMostrarCodigoCita($tabla, $valor);
+
+        return $respuesta;
+    }
 }

@@ -16,13 +16,17 @@ const modalRegister = document.querySelector("#modalRegister");
 const closeLogin = document.querySelector("#closeLogin");
 const closeRegister = document.querySelector("#closeRegsiter");
 
-/* <!--==================== MODAL SERVICIOS ====================--> */
+/* <!--==================== MODAL ESPECIALISTAS ====================--> */
 const cardsServices = document.querySelectorAll(".card-services");
 
 const modalServices = document.querySelector("#modalServices");
 const closeServices = document.querySelector("#closeServices");
 
-const inputServicio = document.querySelector('[name="idEspecialista"]');
+const inputIdEspecialista = document.querySelector('[name="idEspecialista"]');
+const inputImgEspecialista = document.querySelector('[name="imgEspecialista"]');
+const inputNombreEspecialista = document.querySelector(
+  '[name="nombreEspecialista"]'
+);
 
 /* ======================================================================
                             EVENT LISTENERS
@@ -71,7 +75,7 @@ if (closeRegister) {
   });
 }
 
-/* <!--==================== MODAL SERVICIOS ====================--> */
+/* <!--==================== MODAL ESPECIALISTAS ====================--> */
 if (cardsServices) {
   cardsServices.forEach((card) => {
     card.addEventListener("click", function (e) {
@@ -89,7 +93,11 @@ if (cardsServices) {
       ).innerHTML = `Seleccionado <i class="ri-tooth-line transition-transform duration-300 button__icon"></i>`;
 
       // Guardar el id del servicio seleccionado
-      inputServicio.value = e.target.getAttribute("service-id");
+      inputIdEspecialista.value = e.target.getAttribute("especialista-id");
+      inputImgEspecialista.value = e.target.getAttribute("especialista-img");
+      inputNombreEspecialista.value = e.target.getAttribute(
+        "especialista-nombre"
+      );
 
       //Mostrar Modal
       mostrarModal(modalServices);
@@ -99,7 +107,7 @@ if (cardsServices) {
 
 if (closeServices) {
   closeServices.addEventListener("click", () => {
-    // Ocultar modal de servicios
+    // Ocultar modal de especialistas
     ocultarModal(modalServices);
   });
 }
@@ -119,7 +127,7 @@ function ocultarModal(reference) {
   document.body.classList.remove("overflow-hidden");
 }
 
-/* <!--==================== MODAL SERVICIOS ====================--> */
+/* <!--==================== MODAL ESPECIALISTAS ====================--> */
 function eliminarActive() {
   cardsServices.forEach((card) => {
     card.classList.remove("card-active");
@@ -139,16 +147,14 @@ const sr = ScrollReveal({
 });
 
 sr.reveal(`.value-card, .category-card, .footer`, { interval: 100 });
-sr.reveal(`.citas-calendar`, { origin: "left", interval: 100 });
 
-sr.reveal(`.about-img, .home-img, .contact-info, .perfil-info`, {
-  origin: "left",
-});
+sr.reveal(
+  `.about-img, .home-img, .contact-info, .perfil-info, .especialista-container`,
+  {
+    origin: "left",
+  }
+);
 
 sr.reveal(`.about-data, .home-data, .contact-form, .citas-info`, {
   origin: "right",
-});
-
-sr.reveal(`.service-card`, {
-  interval: 200,
 });

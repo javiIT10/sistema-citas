@@ -4,6 +4,7 @@
             $valor = $_POST["idEspecialista"];
 
             $citas =  ControladorCitas::ctrMostrarCitas($valor);
+            $precioCita = 200;
         } else {
             echo '<script> window.location = "' . $ruta . '" </script>';
         }
@@ -11,11 +12,11 @@
       <!--==================== CALENDAR ====================-->
       <section
           id="infoCitas"
-          class="p-[2rem_0_2rem] tablet:p-[5rem_0_5rem] desktop:p-[5rem_0_5rem] max-w-7xl mx-4 sm-mobil:mx-6 desktop:px-6 desktop:mx-auto" idEspecialista="<?php echo $_POST["idEspecialista"] ?>" fechaCita="<?php echo $_POST["fechaSeleccionada"] ?>">
+          class="p-[2rem_0_2rem] tablet:p-[5rem_0_5rem] desktop:p-[5rem_0_5rem] max-w-7xl mx-4 sm-mobil:mx-6 desktop:px-6 desktop:mx-auto citas-info" idEspecialista="<?php echo $_POST["idEspecialista"] ?>" fechaCita="<?php echo $_POST["fechaSeleccionada"] ?>">
           <div
               class="grid gap-6 tablet:grid-cols-2 desktop:grid-cols-3 desktop:gap-10">
               <header
-                  class="flex flex-col gap-4 tablet:flex-row-reverse tablet:items-start desktop:items-center tablet:justify-between tablet:col-start-1 tablet:col-end-2 desktop:col-end-3 citas-calendar">
+                  class="flex flex-col gap-4 tablet:flex-row-reverse tablet:items-start desktop:items-center tablet:justify-between tablet:col-start-1 tablet:col-end-2 desktop:col-end-3 ">
                   <a
                       href="services.html"
                       class="button text-sm tablet:text-base text-first-color hover:text-first-color-alt font-medium inline-flex items-center gap-x-2 p-0">
@@ -49,13 +50,12 @@
 
               <div
                   id="calendar"
-                  class="tablet:col-start-1 tablet:col-end-2 desktop:col-end-3 w-full citas-calendar"></div>
+                  class="tablet:col-start-1 tablet:col-end-2 desktop:col-end-3 w-full"></div>
 
               <form
                   id="datosCita"
-                  action="<?php echo $ruta; ?>perfil" method="post"
-                  class="flex flex-col gap-6 tablet:col-start-2 tablet:col-end-3 tablet:row-start-1 tablet:row-end-3 desktop:col-start-3 desktop:col-end-4 citas-info">
-                  <header class="my-5">
+                  class="flex flex-col gap-6 tablet:col-start-2 tablet:col-end-3 tablet:row-start-1 tablet:row-end-3 desktop:col-start-3 desktop:col-end-4">
+                  <header class="my-5 border-b border-gray-300 pb-3">
                       <h3 class="text-xl mb-2">Información de tu cita</h3>
                       <p
                           class="flex gap-2 mobile:gap-4 items-center text-sm mobile:text-base">
@@ -64,7 +64,7 @@
                       </p>
                   </header>
                   <div class="form__field">
-                      <label for="citasCodigoCita" class="form__label">Código de la cita</label>
+                      <label for="citasCodigoCita" class="form__label">Código de la cita:</label>
                       <input
                           type="text"
                           required
@@ -72,27 +72,27 @@
                           id="citasCodigoCita"
                           name="codigoCita"
                           class="form__input text-first-color"
-                          value="K2DRESF34" />
+                          value="" />
 
                       <i class="ri-barcode-line h-max text-2xl absolute left-6 top-0 bottom-0 m-auto"></i>
                   </div>
 
                   <div class="form__field">
-                      <label for="citasServicioTipo" class="form__label">Tipo de servicio</label>
+                      <label for="citasDr" class="form__label">Especialista:</label>
                       <input
                           type="text"
                           required
                           disabled
-                          id="citasServicioTipo"
-                          name="servicioTipo"
+                          id="citasDr"
+                          name="especialista"
                           class="form__input text-first-color"
-                          value="" />
+                          value="<?php echo $_POST["nombreEspecialista"] ?>" />
 
                       <i class="ri-tooth-line h-max text-2xl absolute left-6 top-0 bottom-0 m-auto"></i>
                   </div>
 
                   <div class="form__field">
-                      <label for="citasFechaSeleccionada" class="form__label">Fecha de tu cita</label>
+                      <label for="citasFechaSeleccionada" class="form__label">Fecha de tu cita:</label>
                       <input
                           type="text"
                           required
@@ -108,17 +108,17 @@
                   <div class="flex flex-row-reverse justify-between items-end gap-4">
                       <div class="text-end">
                           <label for="citasPrecioCita"
-                              class="text-lg tablet:text-xl font-semibold text-title-color">Total a pagar</label>
+                              class="text-lg font-semibold text-title-color">Total a pagar</label>
                           <input
                               id="citasPrecioCita"
                               name="precioCita"
                               type="text"
-                              value="$ 400.00 mx"
+                              value="$ <?php echo number_format($precioCita, 2); ?> mx"
                               disabled
                               class="text-lg tablet:text-xl border-none font-semibold text-first-color-alt p-0 w-32 text-end" />
                       </div>
                       <button
-                          type="submit"
+                          type="button"
                           class="button bg-first-color hover:bg-first-color-alt items-center gap-x-2 w-full justify-center text-sm mobile:text-lg px-3">
                           Pagar cita
                           <i
@@ -130,8 +130,8 @@
               <form
                   id="formNoDisponible"
                   action="<?php echo $ruta; ?>citas" method="post"
-                  class="flex flex-col gap-6 tablet:col-start-2 tablet:col-end-3 tablet:row-start-1 tablet:row-end-3 desktop:col-start-3 desktop:col-end-4 citas-info">
-                  <header class="my-5">
+                  class="flex-col gap-6 tablet:col-start-2 tablet:col-end-3 tablet:row-start-1 tablet:row-end-3 desktop:col-start-3 desktop:col-end-4 hidden ">
+                  <header class="my-5 border-b border-gray-300 pb-3">
                       <h2 class="text-2xl mb-2">¡Lo sentimos!</h2>
                       <p
                           class="flex gap-2 mobile:gap-4 items-center text-sm mobile:text-base">
@@ -158,20 +158,22 @@
                   </div>
 
                   <div class="form__field">
-                      <label for="noDisponibleServicioTipo" class="form__label">Tipo de servicio</label>
+                      <label for="noDisponibleDr" class="form__label">Especialista:</label>
                       <input
                           type="text"
                           required
                           disabled
-                          id="noDisponibleServicioTipo"
-                          name="servicioTipo"
+                          id="noDisponibleDr"
+                          name="especialista"
                           class="form__input"
-                          value="Endodoncia" />
+                          value="<?php echo $_POST["nombreEspecialista"] ?>" />
 
                       <i class="ri-tooth-line h-max text-2xl absolute left-6 top-0 bottom-0 m-auto"></i>
                   </div>
 
                   <input type="hidden" name="idEspecialista" value="<?php echo $_POST["idEspecialista"] ?>" />
+                  <input type="hidden" name="imgEspecialista" value="<?php echo $_POST["imgEspecialista"] ?>" />
+                  <input type="hidden" name="nombreEspecialista" value="<?php echo $_POST["nombreEspecialista"] ?>" />
 
                   <button
                       type="submit"

@@ -22,4 +22,20 @@ class ModeloCitas
 
         $stmt = null;
     }
+
+    static public function mdlMostrarCodigoCita($tabla, $valor)
+    {
+
+        $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE cita_codigo = :cita_codigo");
+
+        $stmt->bindParam(":cita_codigo", $valor, PDO::PARAM_STR);
+
+        $stmt->execute();
+
+        return $stmt->fetch();
+
+        $stmt->close();
+
+        $stmt = null;
+    }
 }

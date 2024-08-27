@@ -3,6 +3,9 @@
 $ruta = ControladorRuta::ctrRuta();
 $servidor = ControladorRuta::ctrServidor();
 
+const CLIENT_ID = "AdUmmmxh4xqvUZrlXdVplUQ8u63JcftnTm-cEz60d06vGdHthw4Sjl9Lk7DazPCsZY7Gld9Uqw6xysWO";
+const CURRENCY = "MXN";
+
 ?>
 
 <!DOCTYPE html>
@@ -37,8 +40,15 @@ $servidor = ControladorRuta::ctrServidor();
 
   <!--==================== JAVASCRIPT ====================-->
 
+  <!-- SWEET ALERT 2 -->
+  <!-- https://sweetalert2.github.io/ -->
+  <script src="assets/js/plugins/sweetalert2.all.js"></script>
+
   <!-- Fullcalendar -->
   <script src="assets/js/plugins/fullcalendar.global.min.js"></script>
+
+  <!-- Paypal SDK -->
+  <script src="https://www.paypal.com/sdk/js?client-id=<?php echo CLIENT_ID; ?>&currency=<?php echo CURRENCY; ?>"></script>
 
 </head>
 

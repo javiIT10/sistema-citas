@@ -29,6 +29,7 @@
                 <input type="hidden" name="idEspecialista" />
                 <input type="hidden" name="imgEspecialista" />
                 <input type="hidden" name="nombreEspecialista" />
+                <input type="hidden" name="precioCitaEspecialista">
 
                 <button
                     type="submit"

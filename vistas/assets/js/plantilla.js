@@ -27,6 +27,15 @@ const inputImgEspecialista = document.querySelector('[name="imgEspecialista"]');
 const inputNombreEspecialista = document.querySelector(
   '[name="nombreEspecialista"]'
 );
+const inputPrecioCitaEspecialista = document.querySelector(
+  '[name="precioCitaEspecialista"]'
+);
+
+/* <!--==================== MODAL PAGOS ====================--> */
+
+const btnModalPago = document.querySelector("#btnModalPago");
+const modalPago = document.querySelector("#modalPago");
+const closeModalPago = document.querySelector("#closeModalPago");
 
 /* ======================================================================
                             EVENT LISTENERS
@@ -98,6 +107,9 @@ if (cardsServices) {
       inputNombreEspecialista.value = e.target.getAttribute(
         "especialista-nombre"
       );
+      inputPrecioCitaEspecialista.value = e.target.getAttribute(
+        "especialista-precio"
+      );
 
       //Mostrar Modal
       mostrarModal(modalServices);
@@ -109,6 +121,25 @@ if (closeServices) {
   closeServices.addEventListener("click", () => {
     // Ocultar modal de especialistas
     ocultarModal(modalServices);
+  });
+}
+
+/* <!--==================== MODAL PAGOS ====================--> */
+
+if (btnModalPago) {
+  btnModalPago.addEventListener("click", (e) => {
+    // Prevenir accion por defecto
+    e.preventDefault();
+
+    // Mostrar modal de registro
+    mostrarModal(modalPago);
+  });
+}
+
+if (closeModalPago) {
+  closeModalPago.addEventListener("click", () => {
+    // Ocultar modal de especialistas
+    ocultarModal(modalPago);
   });
 }
 

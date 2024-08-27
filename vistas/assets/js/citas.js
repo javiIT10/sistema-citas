@@ -48,7 +48,6 @@ function mostrarDatosCita() {
 
   // Generamos el codigo de la cita
   const codigoCita = codigoAleatorio(caracteres, 10);
-  console.log(codigoCita);
 
   // Solicitamos la informacion a servidor
   const datos = new FormData();
@@ -65,9 +64,16 @@ function mostrarDatosCita() {
     success: function (respuesta) {
       if (!respuesta) {
         const inputCodigoCita = document.querySelector('[name="codigoCita"]');
+        const btnPagarCita = document.querySelector("#btnPagarCita");
+        btnPagarCita.setAttribute("codigoCita", codigoCita);
         inputCodigoCita.value = codigoCita;
       } else {
         const inputCodigoCita = document.querySelector('[name="codigoCita"]');
+        const btnPagarCita = document.querySelector("#btnPagarCita");
+        btnPagarCita.setAttribute(
+          "codigoCita",
+          codigoCita + codigoAleatorio(caracteres, 3)
+        );
         inputCodigoCita.value = codigoCita + codigoAleatorio(caracteres, 3);
       }
     },
@@ -268,5 +274,41 @@ if (infoCitas) {
         calendar.render();
       }
     },
+  });
+}
+
+/* <!--==================== FUNCION GENERAR COOKIE ====================--> */
+
+function crearCookie(cookieNombre, cookieValor, cookieDiasExpedicion) {
+  const hoy = new Date();
+
+  hoy.setTime(hoy.getTime() + cookieDiasExpedicion * 24 * 60 * 60 * 1000);
+
+  const diaExpedicion = "expires=" + hoy.toUTCString();
+
+  document.cookie = cookieNombre + "=" + cookieValor + "; " + diaExpedicion;
+}
+
+/* <!--==================== CAPTURAR DATOS DE LA CITA ====================--> */
+
+const btnPagarCita = document.querySelector("#btnPagarCita");
+
+if (btnPagarCita) {
+  btnPagarCita.addEventListener("click", function (e) {
+    // Guardamos los datos de la cita
+    const idEspecialista = this.getAttribute("idEspecialista");
+    const imgEspecialista = this.getAttribute("imgEspecialista");
+    const nombreEspecialista = this.getAttribute("nombreEspecialista").trim();
+    const fechaCita = this.getAttribute("fechaCita");
+    const codigoCita = this.getAttribute("codigoCita");
+    const pagoCita = this.getAttribute("pagoCita");
+
+    // Generamos la cookies de la cita
+    crearCookie("idEspecialista", idEspecialista, 1);
+    crearCookie("imgEspecialista", imgEspecialista, 1);
+    crearCookie("nombreEspecialista", nombreEspecialista, 1);
+    crearCookie("fechaCita", fechaCita, 1);
+    crearCookie("codigoCita", codigoCita, 1);
+    crearCookie("pagoCita", pagoCita, 1);
   });
 }

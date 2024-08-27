@@ -26,4 +26,14 @@ class ControladorCitas
 
         return $respuesta;
     }
+
+    static public function ctrGuardarCita($datos)
+    {
+
+        $tabla = "citas";
+
+        $respuesta = ModeloCitas::mdlGuardarCita($tabla, $datos);
+
+        return $respuesta;
+    }
 }

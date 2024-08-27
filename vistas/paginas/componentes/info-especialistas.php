@@ -37,6 +37,7 @@
                           especialista-id="<?php echo $valor["especialista_id"] ?>"
                           especialista-nombre="<?php echo $valor["especialista_nombre"] ?>"
                           especialista-img="<?php echo $servidor . $valor["especialista_img"] ?>"
+                          especialista-precio="<?php echo $valor["especialista_precio_cita"] ?>"
                           href=" #"
                           class="button text-sm tablet:text-base text-first-color hover:text-first-color-alt font-medium inline-flex items-center gap-x-2 p-0">
                           Seleccionar especialista

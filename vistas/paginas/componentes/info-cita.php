@@ -113,17 +113,23 @@
                               id="citasPrecioCita"
                               name="precioCita"
                               type="text"
-                              value="$ <?php echo number_format($precioCita, 2); ?> mx"
+                              value="$ <?php echo number_format($_POST["precioCitaEspecialista"], 2); ?> mx"
                               disabled
                               class="text-lg tablet:text-xl border-none font-semibold text-first-color-alt p-0 w-32 text-end" />
                       </div>
-                      <button
+                      <a href="<?php echo $ruta; ?>perfil"
+                          id="btnPagarCita"
                           type="button"
-                          class="button bg-first-color hover:bg-first-color-alt items-center gap-x-2 w-full justify-center text-sm mobile:text-lg px-3">
+                          class="button bg-first-color hover:bg-first-color-alt items-center gap-x-2 w-full justify-center text-sm mobile:text-lg px-3"
+                          idEspecialista="<?php echo $_POST["idEspecialista"]; ?>"
+                          imgEspecialista="<?php echo $_POST["imgEspecialista"]; ?>"
+                          nombreEspecialista="<?php echo $_POST["nombreEspecialista"]; ?>"
+                          fechaCita="<?php echo $_POST["fechaSeleccionada"]; ?>"
+                          codigoCita=""
+                          pagoCita="<?php echo $_POST["precioCitaEspecialista"]; ?>">
                           Pagar cita
-                          <i
-                              class="ri-bank-card-line transition-transform duration-[400ms] button__icon"></i>
-                      </button>
+                          <i class="ri-bank-card-line transition-transform duration-[400ms] button__icon"></i>
+                      </a>
                   </div>
               </form>
 
@@ -174,6 +180,7 @@
                   <input type="hidden" name="idEspecialista" value="<?php echo $_POST["idEspecialista"] ?>" />
                   <input type="hidden" name="imgEspecialista" value="<?php echo $_POST["imgEspecialista"] ?>" />
                   <input type="hidden" name="nombreEspecialista" value="<?php echo $_POST["nombreEspecialista"] ?>" />
+                  <input type="hidden" name="precioCitaEspecialista" value="<?php echo $_POST["precioCitaEspecialista"] ?>">
 
                   <button
                       type="submit"

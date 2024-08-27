@@ -167,7 +167,7 @@ if (infoCitas) {
         /* <!--==================== VALIDAR CRUCE DE FECHAS ====================--> */
         for (let i = 0; i < respuesta.length; i++) {
           // Validar si la fecha coincide en la base de datos
-          if (fechaCita == respuesta[i]["cita_fecha_seleccionada"]) {
+          if (fechaCita == respuesta[i]["fechaCita"]) {
             opcion1[i] = false;
           } else {
             opcion1[i] = true;
@@ -184,10 +184,10 @@ if (infoCitas) {
             // Mostramos los datos traidos de la base de datos
             totalEventos.push({
               title: "Ocupado",
-              start: moment(respuesta[i]["cita_fecha_seleccionada"]).format(
+              start: moment(respuesta[i]["fechaCita"]).format(
                 "YYYY-MM-DD HH:00:00"
               ),
-              end: moment(respuesta[i]["cita_fecha_seleccionada"])
+              end: moment(respuesta[i]["fechaCita"])
                 .add(1, "hours")
                 .format("YYYY-MM-DD HH:00:00"),
               backgroundColor: "#252728",
@@ -213,10 +213,10 @@ if (infoCitas) {
             // Mostramos los datos traidos de la base de datos
             totalEventos.push({
               title: "Ocupado",
-              start: moment(respuesta[i]["cita_fecha_seleccionada"]).format(
+              start: moment(respuesta[i]["fechaCita"]).format(
                 "YYYY-MM-DD HH:00:00"
               ),
-              end: moment(respuesta[i]["cita_fecha_seleccionada"])
+              end: moment(respuesta[i]["fechaCita"])
                 .add(1, "hours")
                 .format("YYYY-MM-DD HH:00:00"),
               backgroundColor: "#252728",
